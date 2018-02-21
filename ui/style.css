@@ -21,16 +21,13 @@ body {
 }
             .container{
                     max-width: 800px;
-                    margin: 0 auto;
+                    margin:  auto;
                     color: grey;
                     font-family: sans-serif;
                     padding-top: 80;
                     padding-right: 50;
                     padding-left: 50;
-                    backface-visibility: visible;
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-attachment: fixed;
+                    
                     background-image: url("http://www.crystalinks.com/pollution.jpg");
 
             }
