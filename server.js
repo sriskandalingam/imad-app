@@ -11,6 +11,9 @@ app.get('/', function (req, res) {
 app.get('/locinfo', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'loc.html'));
 });
+app.get('/analysis', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'analysis.html'));
+});
 app.get('/poll', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'poll.html'));
 });
