@@ -1,43 +1,124 @@
+<!DOCTYPE html>
 <html>
-<head>
-<title>
-Google Maps API v3 - Adding marker on Click and retrieving the co-ordinates in a text box
-</title>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-<script type="text/javascript">
-var map;    //When using event as a parameter to a function declare map, strictly as a global variable
-function initialize()
-{
-    var myLatlng = new google.maps.LatLng(28.635157,77.22496);
-      map = new google.maps.Map(document.getElementById("map_canvas"),
-    {
-        zoom: 14,
-        center: myLatlng,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    });
-
-    google.maps.event.addListener(map, 'click', function(event)
-    {
-        placeMarker(event.latLng);
-    });
+<title>Rural assistant</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
 }
-  
-function placeMarker(location)
-{
-    var marker = new google.maps.Marker(
-    {
-        position: location, 
-        map: map
-    });
-    var coords= location.lat().toFixed(6) + ', ' + location.lng().toFixed(6);
-    document.getElementById("points").value = coords;
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-theme-l1">Home</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Homet</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Values</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">News</a>
+    </div>
+</div>
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+
+
+
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Hackberry (Celtis australis)</h1>
+      <p>A fast-growing plant that can reach up to 20-25 metres tall. It can store 3,660 kg of CO2 in 20 years and effectively absorb and capture pollutants.
+      <img src="https://www.lifegate.com/app/uploads/5673503670_1724bd4745_b.jpg" width="500" height="377">
+      </p>
+    </div>
+
+  </div>
+
+  <div class="w3-row">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Common ash (Fraxinus excelsior)</h1>
+      <p>A large deciduous tree that can exceed 30 metres in height. It is fast-growing especially in the early years and it can store over 3 tonnes of CO2 in 30 years. This is an excellent plant to reduce pollutants too
+      <img src="https://www.lifegate.com/app/uploads/22633604675_953197cb2e_k.jpg" width="500" height="377">
+      </p>
+    </div>
+    
+    </div>
+  </div>
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Wild linden (Tilia cordata)</h1>
+      <p>A tall variety that is one of the ancestors of the common linden. Lindens are typically planted in cities and gardens. This variety excellently captures CO2 and effectively reduces smog
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Pagination -->
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a class="w3-button w3-black" href="http://sriskandalingam.imad.hasura-app.io/analysis">1</a>
+      <a class="w3-button w3-hover-black" href="#">2</a>
+      <a class="w3-button w3-hover-black" href="#">3</a>
+      <a class="w3-button w3-hover-black" href="#">4</a>
+      <a class="w3-button w3-hover-black" href="#">5</a>
+      <a class="w3-button w3-hover-black" href="#">»</a>
+    </div>
+  </div>
+
+  <footer id="myFooter">
+    <div class="w3-container w3-theme-l2 w3-padding-32">
+      <h4>  </h4>
+    </div>
+
+    <div class="w3-container w3-theme-l1">
+      <p>Developed by SKCTians</p>
+    </div>
+  </footer>
+
+<!-- END MAIN -->
+
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
 }
 </script>
-</head>
-<body onload="initialize()" onunload=GUnload()>
-<div id="map_canvas" style="width: 500px; height: 300px"></div>
-<div id="text_coords" style="position: absolute; top:60px; left:600px; width:360px; height:600px; text-align:left">
-<input type="text" id="points">
-</div>
+
 </body>
 </html>
