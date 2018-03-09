@@ -8,6 +8,10 @@ app.use(morgan('combined'));
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
+app.get('/urban.html', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'urban.html'));
+});
+
 app.get('/locinfo', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'locinfo.html'));
 });
