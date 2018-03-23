@@ -19,7 +19,7 @@ app.get('/urban.html', function (req, res) {
 });
 
 app.get('/urbanpage2', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'urbanpage2.html'));
+  res.sendFile(path.join(__dirname, 'ui', 'urbanPage2.html'));
 });
 
 app.get('/locinfo', function (req, res) {
