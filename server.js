@@ -18,6 +18,10 @@ app.get('/urban.html', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'urban.html'));
 });
 
+app.get('/urbanpage2', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'urbanpage2.html'));
+});
+
 app.get('/locinfo', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'locinfo.html'));
 });
